@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <div id="auth-container">
+            <h2 id="auth-title">Login</h2>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="auth-btn">Login</button>
+            <button id="register-btn">Register</button>
+        </div>
+
+        <div id="expense-container" style="display: none;">
+            <h2>Add Expense</h2>
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount (INR)" required>
+            <input type="text" id="expense-category" placeholder="Category" required>
+            <button id="add-expense-btn">Add Expense</button>
+        </div>
+
+        <div id="expenses-list">
+            <h2>Your Expenses</h2>
+            <ul id="expense-items"></ul>
+            <canvas id="expense-chart"></canvas>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
